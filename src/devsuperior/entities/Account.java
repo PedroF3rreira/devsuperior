@@ -1,5 +1,7 @@
 package devsuperior.entities;
 
+import devsuperior.exception.*;
+
 public class Account {
 	private Integer number;
 	private String holder;
@@ -17,10 +19,14 @@ public class Account {
 		}
 	}
 	
-	public void withdraw(double value) {
+	public void withdraw(double value) throws DomainException {
 		if(value > 0 && value <= this.balence) {
 			this.balence -= value;
 		}
+		else {
+			throw new DomainException("O valor tem que ser maior que zero e menor que o saldo");
+		}
+		
 	}
 	
 	public String getHolder() {

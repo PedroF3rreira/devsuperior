@@ -1,5 +1,7 @@
 package devsuperior.entities;
 
+import devsuperior.exception.DomainException;
+
 public final class BussinessAccount extends Account{
 	private Double limit;
 	
@@ -20,7 +22,7 @@ public final class BussinessAccount extends Account{
 	}
 	
 	@Override
-	public void withdraw(double value) {
+	public void withdraw(double value) throws DomainException {
 		if(value <= this.limit) {
 			super.withdraw(value);
 		}

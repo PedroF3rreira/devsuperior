@@ -1,6 +1,5 @@
 package devsuperior.exception;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -9,7 +8,7 @@ import devsuperior.exception.models.entities.Reservation;
 
 public class Main2 {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) {
 		try {
 			Scanner sc = new Scanner(System.in);
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -38,10 +37,9 @@ public class Main2 {
 			
 			reservation.updateDates(checkIn, checkOut);
 			
-			
 			sc.close();
 		}
-		catch(IllegalArgumentException e) {
+		catch(Exception e) {
 			System.out.println("Menssagem erro: " + e.getMessage());
 		}
 		
