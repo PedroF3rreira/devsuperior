@@ -1,6 +1,6 @@
 package devsuperior.entities;
 
-public class Product {
+public class Product implements Comparable<Product>{
 	private Integer id;
 	private String description;
 	private Double price;
@@ -36,6 +36,12 @@ public class Product {
 	@Override
 	public String toString() {
 		return "produto: \n" + this.description +"\n"+ this.price;
+	}
+
+	@Override
+	public int compareTo(Product other) {
+		
+		return price.compareTo(other.getPrice());
 	}
 	
 	
